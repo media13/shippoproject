@@ -7,7 +7,7 @@ ZGN(function()
   var gpio = ZGN.term('1').gpio;
 
   // 調光の初期値を0に設定します
-  var level = 0;
+  var level = 50;
 
   // 指定ピンをPWMに設定
   gpio.pinMode(ledPin, ZGN.PWM);
@@ -15,19 +15,19 @@ ZGN(function()
   // button1ボタンをクリック
   $(document).on('click', '#t1', function() {
     level = level >= 100 ? 100 : level + 1; // levelを1上げる
-	for (var i=1 ; i<=100 ; i++){
+	for (var i=1 ; i<=1000 ; i++){
     gpio.pwmWrite(ledPin, level / 100); // デューティー比の設定
 	}
-	alart(level);
+	alert(level);
   });
 
   // BUTTON2ボタンをクリック
   $(document).on('click', '#T2', function() {
     level = level <= 0 ? 0 : level - 1; // levelを1下げる
-	for (var i=1 ; i<=100 ; i++){
+	for (var i=1 ; i<=1000 ; i++){
     gpio.pwmWrite(ledPin, level / 100); // デューティー比の設定
 	}
-	alart(level);
+	alert(level);
   });
 
 });
