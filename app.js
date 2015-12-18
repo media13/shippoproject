@@ -7,7 +7,7 @@ ZGN(function()
   var gpio = ZGN.term('1').gpio;
 
   // ’²Œõ‚Ì‰Šú’l‚ğ0‚Éİ’è‚µ‚Ü‚·
-  var level = 5;
+  var level = 0;
 
   // w’èƒsƒ“‚ğPWM‚Éİ’è
   gpio.pinMode(ledPin, ZGN.PWM);
