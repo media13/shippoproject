@@ -18,7 +18,7 @@ ZGN(function()
 	for (var i=1 ; i<=100 ; i++){
     gpio.pwmWrite(ledPin, level / 100); // デューティー比の設定
 	}
-	document.write(level);
+	alart(level);
   });
 
   // BUTTON2ボタンをクリック
@@ -27,7 +27,7 @@ ZGN(function()
 	for (var i=1 ; i<=100 ; i++){
     gpio.pwmWrite(ledPin, level / 100); // デューティー比の設定
 	}
-	document.write(level);
+	alart(level);
   });
 
 });
