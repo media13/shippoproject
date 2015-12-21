@@ -4,7 +4,7 @@ ZGN(function()
   var ledPin = '17';
 
   // TerminalのGPIOインスタンスを取得します
-  var gpio = ZGN.term(1).gpio;
+  var gpio = ZGN.term('1').gpio;
 
   // 指定ピンを出力に設定
   gpio.pinMode(ledPin, ZGN.OUTPUT);
