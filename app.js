@@ -1,21 +1,21 @@
-ZGN(function()
-{
-  // 17番ピンで動作させます
-  var ledPin = '17';
+ZGN(function() {
 
-  // TerminalのGPIOインスタンスを取得します
-  var gpio = ZGN.term('1').gpio;
+    // Termインスタンスを取得
+    var term = ZGN.term(1);
 
-  // 指定ピンを出力に設定
-  gpio.pinMode(ledPin, ZGN.OUTPUT);
+    // 18番ピンで動作させます
+    var pinNo = '18';
 
-  // ONボタンをクリック
-  $(document).on('click', '#on', function() {
-    gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
-  });
+    // 指定ピンを出力に設定
+    term.gpio.pinMode(pinNo, ZGN.OUTPUT);
 
-  // OFFボタンをクリック
-  $(document).on('click', '#off', function() {
-    gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
-  });
+    // ONボタンをクリック
+    $(document).on('click', '#on', function() {
+        term.gpio.digitalWrite(pinNo, ZGN.HIGH);    // 点灯
+    });
+
+    // OFFボタンをクリック
+    $(document).on('click', '#off', function() {
+        term.gpio.digitalWrite(pinNo, ZGN.LOW);     // 消灯
+    });
 });
