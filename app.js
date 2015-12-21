@@ -19,11 +19,18 @@ ZGN(function()
 
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
-    gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
+    gpio.digitalWrite(ledPin, ZGN.HIGH, function() {
+      // 動作完了を ブラウザのコンソールログに表示させます
+      console.log('GPIO:HIGH');
+    }); // 点灯
   });
 
   // OFFボタンをクリック
   $(document).on('click', '#off', function() {
-    gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
+    gpio.digitalWrite(ledPin, ZGN.LOW, function() {
+      // 動作完了を ブラウザのコンソールログに表示させます
+      console.log('GPIO:LOW');
+    }); // 消灯
   });
+
 });
