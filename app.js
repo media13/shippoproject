@@ -4,13 +4,13 @@ ZGN(function()
   var ledPin = '18';
 
   // TerminalのGPIOインスタンスを取得します
-  var gpio = ZGN.term('1').gpio;
+  var gpio = ZGN.term(1).gpio;
 
   // 調光の初期値を0に設定します
   var level = 0;
 
   // 指定ピンをPWMに設定
-  gpio.pinMode(ledPin, ZGN.PWM);
+  gpio.pinMode(18, ZGN.PWM);
 
   // Brightボタンをクリック
   $(document).on('click', '#bright', function() {
