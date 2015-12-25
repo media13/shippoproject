@@ -11,7 +11,7 @@ ZGN(function()
     alert( 'OK' );
   }
 
-  console.log(ledPin);
+
 
   // TerminalのGPIOインスタンスを取得します
   var gpio = term.gpio;
