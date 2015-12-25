@@ -1,17 +1,16 @@
 ZGN(function()
 {
-  // 27番ピンで動作させます
-  var ledPin = '27';
-
-  // id=1のTerminalインスタンスを取得します
-  var term = ZGN.term('1');
 
   // Terminalの通信状態を判定
   if( term.isAlive() ){
     alert( 'OK' );
   }
 
+  // 17番ピンで動作させます
+  var ledPin = '17';
 
+  // id=1のTerminalインスタンスを取得します
+  var term = ZGN.term('1');
 
   // TerminalのGPIOインスタンスを取得します
   var gpio = term.gpio;
