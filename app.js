@@ -1,37 +1,37 @@
-ZGN(function()
+ï»¿ZGN(function()
 {
 
-  // Terminal‚Ì’ÊMó‘Ô‚ğ”»’è
+  // 17ç•ªãƒ”ãƒ³ã§å‹•ä½œã•ã›ã¾ã™
+  var ledPin = '17';
+
+  // id=1ã®Terminalã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã—ã¾ã™
+  var term = ZGN.term('1');
+
+  // Terminalã®é€šä¿¡çŠ¶æ…‹ã‚’åˆ¤å®š
   if( term.isAlive() ){
     alert( 'OK' );
   }
 
-  // 17”Ôƒsƒ“‚Å“®ì‚³‚¹‚Ü‚·
-  var ledPin = '17';
-
-  // id=1‚ÌTerminalƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾‚µ‚Ü‚·
-  var term = ZGN.term('1');
-
-  // Terminal‚ÌGPIOƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾‚µ‚Ü‚·
+  // Terminalã®GPIOã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã—ã¾ã™
   var gpio = term.gpio;
 
-  // w’èƒsƒ“‚ğo—Í‚Éİ’è
+  // æŒ‡å®šãƒ”ãƒ³ã‚’å‡ºåŠ›ã«è¨­å®š
   gpio.pinMode(ledPin, ZGN.OUTPUT);
 
-  // ONƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN
+  // ONãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯
   $(document).on('click', '#on', function() {
     gpio.digitalWrite(ledPin, ZGN.HIGH, function() {
-      // “®ìŠ®—¹‚ğ ƒuƒ‰ƒEƒU‚ÌƒRƒ“ƒ\[ƒ‹ƒƒO‚É•\¦‚³‚¹‚Ü‚·
+      // å‹•ä½œå®Œäº†ã‚’ ãƒ–ãƒ©ã‚¦ã‚¶ã®ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ãƒ­ã‚°ã«è¡¨ç¤ºã•ã›ã¾ã™
       console.log('GPIO:HIGH');
-    }); // “_“”
+    }); // ç‚¹ç¯
   });
 
-  // OFFƒ{ƒ^ƒ“‚ğƒNƒŠƒbƒN
+  // OFFãƒœã‚¿ãƒ³ã‚’ã‚¯ãƒªãƒƒã‚¯
   $(document).on('click', '#off', function() {
     gpio.digitalWrite(ledPin, ZGN.LOW, function() {
-      // “®ìŠ®—¹‚ğ ƒuƒ‰ƒEƒU‚ÌƒRƒ“ƒ\[ƒ‹ƒƒO‚É•\¦‚³‚¹‚Ü‚·
+      // å‹•ä½œå®Œäº†ã‚’ ãƒ–ãƒ©ã‚¦ã‚¶ã®ã‚³ãƒ³ã‚½ãƒ¼ãƒ«ãƒ­ã‚°ã«è¡¨ç¤ºã•ã›ã¾ã™
       console.log('GPIO:LOW');
-    }); // Á“”
+    }); // æ¶ˆç¯
   });
 
 });
