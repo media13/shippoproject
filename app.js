@@ -2,7 +2,7 @@
 {
 
   // 17番ピンで動作させます
-  var ledPin = '17';
+  var ledPin = '0';
 
   // id=1のTerminalインスタンスを取得します
   var term = ZGN.term('1');
