@@ -1,8 +1,8 @@
 ﻿ZGN(function()
 {
 
-  // 調光の初期値を0に設定します
-  var level = 0;
+  // モータの初期値を90radに設定します
+  var rad = 90;
 
   // 18番ピンで動作させます
   var ledPin = '1';
@@ -16,16 +16,34 @@
   // 指定ピンを出力に設定
   gpio.pinMode(ledPin, ZGN.PWM);
 
-  // ONボタンをクリック
-  $(document).on('click', '#on', function() {
-    level = level >= 10 ? 10 : level + 1; // levelを1上げる
-    gpio.pwmWrite(ledPin, level / 10); // 点灯
+  // モータの角度をセットする。
+  function ServoSet(radian){
+    
+  }
+
+  ServoSet(rad);
+
+  // 1ボタンをクリック
+  $(document).on('click', '#1', function() {
+    rad = rad >= 180 ? 180 : rad + 1; // モータを+1radする
+    ServoSet(rad);
   });
 
-  // OFFボタンをクリック
-  $(document).on('click', '#off', function() {
-    level = level <= 0 ? 0 : level - 1; // levelを1下げる
-    gpio.pwmWrite(ledPin, level / 10); // 消灯
+  // -1ボタンをクリック
+  $(document).on('click', '#-1', function() {
+    rad = rad <= 0 ? 0 : rad - 1; // モータを-1radする
+    ServoSet(rad);
   });
 
+  // 10ボタンをクリック
+  $(document).on('click', '#10', function() {
+    rad = rad >= 180 ? 180 : rad + 10; // モータを+10radする
+    ServoSet(rad);
+  });
+
+  // -10ボタンをクリック
+  $(document).on('click', '#-10', function() {
+    rad = rad <= 0 ? 0 : rad - 10; // モータを-10radする
+    ServoSet(rad);
+  });
 });

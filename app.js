@@ -1,37 +1,26 @@
 ﻿ZGN(function()
 {
-
-  // 17番ピンで動作させます
-  var ledPin = '0';
-
-  // id=1のTerminalインスタンスを取得します
-  var term = ZGN.term('1');
-
-  // Terminalの通信状態を判定
-  if( term.isAlive() ){
-    alert( 'OK' );
-  }
+  // 18番ピンで動作させます
+  var ledPin = '1';
 
   // TerminalのGPIOインスタンスを取得します
-  var gpio = term.gpio;
+  var gpio = ZGN.term('1').gpio;
 
-  // 指定ピンを出力に設定
-  gpio.pinMode(ledPin, ZGN.OUTPUT);
+  // 調光の初期値を0に設定します
+  var level = 0;
 
-  // ONボタンをクリック
-  $(document).on('click', '#on', function() {
-    gpio.digitalWrite(ledPin, ZGN.HIGH, function() {
-      // 動作完了を ブラウザのコンソールログに表示させます
-      console.log('GPIO:HIGH');
-    }); // 点灯
+  // 指定ピンをPWMに設定
+  gpio.pinMode(ledPin, ZGN.PWM);
+
+  // Brightボタンをクリック
+  $(document).on('click', '#bright', function() {
+    level = level >= 10 ? 10 : level + 1; // levelを1上げる
+    gpio.pwmWrite(ledPin, level / 10); // デューティー比の設定
   });
 
-  // OFFボタンをクリック
-  $(document).on('click', '#off', function() {
-    gpio.digitalWrite(ledPin, ZGN.LOW, function() {
-      // 動作完了を ブラウザのコンソールログに表示させます
-      console.log('GPIO:LOW');
-    }); // 消灯
+  // Darkボタンをクリック
+  $(document).on('click', '#dark', function() {
+    level = level <= 0 ? 0 : level - 1; // levelを1下げる
+    gpio.pwmWrite(ledPin, level / 10); // デューティー比の設定
   });
-
 });
