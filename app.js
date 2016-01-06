@@ -24,7 +24,7 @@
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
         i++;
       }   
-    }while(i<30000)
+    }while(i<30000);
     alert("終了");
   });
 
