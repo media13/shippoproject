@@ -11,21 +11,12 @@
 
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
-    var i = 0;
     var ms = new Date();
     alert(ms.getUTCMilliseconds()); 
 
-    do{
-      ms.setUTCSeconds();
-      if((ms.getUTCSeconds()/2) = 0){
-        gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
-        i++;
-      }else{
-        gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
-        i++;
-      }   
-    }while(i<20000);
-    alert("終了");
+    if((ms.getUTCMilliseconds() < 500){
+      gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
+    }
   });
 
   // OFFボタンをクリック
