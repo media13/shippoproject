@@ -19,11 +19,11 @@
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
       }
       console.log(i++);
-      if(i == 200){
+      if(i == 2000){
         clearInterval(light);
         alert("終了");
       }
-    }, 100);
+    }, 0.5);
 
   });
 
