@@ -14,11 +14,11 @@
     var ms = new Date();
     var i = 0;
 
-    ms.setUTCMilliseconds
-    alert(ms.getUTCMilliseconds); 
+    ms.setUTCMilliseconds();
+    alert(ms.getUTCMilliseconds()); 
     do{
-      ms.setUTCMilliseconds;
-      if(ms.getUTCMilliseconds < 500){
+      ms.setUTCMilliseconds();
+      if(ms.getUTCMilliseconds() < 500){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
         i++;
       }else{
