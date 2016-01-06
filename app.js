@@ -21,7 +21,8 @@
       }else{
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
         i++;
-      }      
+      }
+      console.log(ms.getUTCMilliseconds);    
     }while(i<10000)
     alert("終了");
   });
