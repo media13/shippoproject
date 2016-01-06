@@ -27,10 +27,10 @@
     }, 0.5);*/
     var servo = setInterval(function(){
       var servo_on = setInterval(function(){
-        gpio.digitalWrite(ledPin, ZGN.HIGH);
+        gpio.digitalWrite(ledPin, ZGN.LOW);
         clearInterval(servo_on);
       }, 100);
-      gpio.digitalWrite(ledPin, ZGN.LOW);
+      gpio.digitalWrite(ledPin, ZGN.HIGH);
       i++;;
       if(i == 50){
         clearInterval(servo);
