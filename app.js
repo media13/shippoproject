@@ -12,7 +12,7 @@
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
     var i = 0;
-    var ms = ms.setUTCMilliseconds();
+    var ms = new Date();
     alert(ms.getUTCMilliseconds()); 
 
     do{
