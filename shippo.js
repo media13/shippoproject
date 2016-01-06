@@ -34,7 +34,7 @@
       var servo_on = setInterval(function(){
         gpio.digitalWrite(ledPin, ZGN.HIGH);
         clearInterval(servo_on);
-      }, calPalse(rad));
+      }, rad);
       gpio.digitalWrite(ledPin, ZGN.LOW);
     }, pwm_sycle);
   }
