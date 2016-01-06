@@ -16,15 +16,15 @@
     alert(ms.getUTCMilliseconds()); 
 
     do{
-      ms.setUTCMilliseconds();
-      if(ms.getUTCMilliseconds() < 500){
+      ms.setUTCSeconds();
+      if((ms.getUTCSeconds()/2) < 0){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
         i++;
       }else{
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
         i++;
       }   
-    }while(i<30000);
+    }while(i<20000);
     alert("終了");
   });
 
