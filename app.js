@@ -29,10 +29,10 @@
       var servo_on = setInterval(function(){
         gpio.digitalWrite(ledPin, ZGN.HIGH);
         clearInterval(servo_on);
-      }, 250);
+      }, 100);
       gpio.digitalWrite(ledPin, ZGN.LOW);
       i++;;
-      if(i == 100){
+      if(i == 50){
         clearInterval(servo);
         alert("終了");
       }
