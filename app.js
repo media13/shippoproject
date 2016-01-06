@@ -11,11 +11,10 @@
 
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
-    var ms = new Date();
     var i = 0;
-
-    ms.setUTCMilliseconds();
+    var ms = ms.setUTCMilliseconds();
     alert(ms.getUTCMilliseconds()); 
+
     do{
       ms.setUTCMilliseconds();
       if(ms.getUTCMilliseconds() < 500){
@@ -25,7 +24,7 @@
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
         i++;
       }   
-    }while(i<10000)
+    }while(i<30000)
     alert("終了");
   });
 
