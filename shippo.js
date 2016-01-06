@@ -31,12 +31,17 @@
     console.log(radian);
     var rad = pulse_min + pulse_unit * radian;
     console.log(rad);
+    var i = 0;
     var servo = setInterval(function(){
       var servo_on = setInterval(function(){
         gpio.digitalWrite(ledPin, ZGN.LOW);
         clearInterval(servo_on);
       }, rad);
       gpio.digitalWrite(ledPin, ZGN.HIGH);
+      i++;
+      if(i == 100){
+        clearInterval(servo);
+      }
     }, pwm_sycle);
   }
 
