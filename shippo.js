@@ -28,7 +28,9 @@
 
   // モータの角度をセットする。
   function ServoSet(radian){
+    console.log(radian);
     var rad = pulse_min + pulse_unit * radian;
+    console.log(rad);
     var i = 0;
     var servo = setInterval(function(){
       var servo_on = setInterval(function(){
