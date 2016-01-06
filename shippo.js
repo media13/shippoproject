@@ -24,7 +24,7 @@
 
   // OFFボタンをクリック
   $(document).on('click', '#off', function() {
-    level = level <= 10 ? 0 : level - 1; // levelを1下げる
+    level = level <= 0 ? 0 : level - 1; // levelを1下げる
     gpio.pwmWrite(ledPin, level / 10); // 消灯
   });
 
