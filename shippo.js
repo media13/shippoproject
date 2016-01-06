@@ -5,7 +5,7 @@
   ターミナル
 --------------------------------------------------------------------*/
 
-  var ledPin = '1';						// 18番ピンで動作させます
+  var ledPin = '0';						// 17番ピンで動作させます
   var term   = ZGN.term('1'); 		// id=1のTerminalインスタンスを取得
   var gpio   = term.gpio;				// TerminalのGPIOインスタンスを取得
   gpio.pinMode(ledPin, ZGN.PWM);		// 指定ピンを出力に設定
