@@ -15,10 +15,11 @@
     var light = setInterval(function(){
       if(i%2 == 0){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
+        i++;
       }else{
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
+        i++;
       }
-      console.log(i++);
       if(i == 2000){
         clearInterval(light);
         alert("終了");
