@@ -20,10 +20,10 @@
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
       }
       i++;
-      if(i == 200){
+      if(i > 200){
         clearInterval(light);
       }
-    }, 20);
+    }, 100);
 
   });
 
