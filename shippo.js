@@ -19,13 +19,13 @@
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
     level = level >= 10 ? 10 : level + 1; // levelを1上げる
-    gpio.digitalWrite(ledPin, level / 10); // 点灯
+    gpio.pwmWrite(ledPin, level / 10); // 点灯
   });
 
   // OFFボタンをクリック
   $(document).on('click', '#off', function() {
     level = level <= 10 ? 0 : level - 1; // levelを1下げる
-    gpio.digitalWrite(ledPin, level / 10); // 消灯
+    gpio.pwmWrite(ledPin, level / 10); // 消灯
   });
 
 });
