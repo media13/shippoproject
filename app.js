@@ -14,7 +14,7 @@
     var ms = new Date();
     var i = 0;
 
-    console.log(ms.getUTCMilliseconds); 
+    alert(ms.getUTCMilliseconds); 
     do{
       if(ms.getUTCMilliseconds < 500){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
