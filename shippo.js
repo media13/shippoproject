@@ -48,25 +48,25 @@
 
   // 1ボタンをクリック
   $(document).on('click', '#1', function() {
-    rad = rad >= 180 ? 180 : rad + 1; // モータを+1radする
+    rad = rad >= 179 ? 180 : rad + 1; // モータを+1radする
     ServoSet(rad);
   });
 
   // -1ボタンをクリック
   $(document).on('click', '#-1', function() {
-    rad = rad <= 0 ? 0 : rad - 1; // モータを-1radする
+    rad = rad <= 1 ? 0 : rad - 1; // モータを-1radする
     ServoSet(rad);
   });
 
   // 10ボタンをクリック
   $(document).on('click', '#10', function() {
-    rad = rad >= 180 ? 180 : rad + 10; // モータを+10radする
+    rad = rad >= 170 ? 180 : rad + 10; // モータを+10radする
     ServoSet(rad);
   });
 
   // -10ボタンをクリック
   $(document).on('click', '#-10', function() {
-    rad = rad <= 0 ? 0 : rad - 10; // モータを-10radする
+    rad = rad <= 10 ? 0 : rad - 10; // モータを-10radする
     ServoSet(rad);
   });
 
