@@ -14,6 +14,7 @@
     var ms = new Date();
     var i = 0;
 
+    console.log(ms.getUTCMilliseconds); 
     do{
       if(ms.getUTCMilliseconds < 500){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
@@ -21,8 +22,7 @@
       }else{
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
         i++;
-      }
-      console.log(ms.getUTCMilliseconds);    
+      }   
     }while(i<10000)
     alert("終了");
   });
