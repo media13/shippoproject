@@ -14,15 +14,14 @@
     var i = 0;
 
     var light = setInterval(function(){
-        if(i/2 == 0){
-          gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
-        }else{
-          gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
-        }
-        i++;
-        if(i == 200){
-          clearInterval(light);
-        }
+      if(i/2 == 0){
+        gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
+      }else{
+        gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
+      }
+      i++;
+      if(i == 200){
+        clearInterval(light);
       }
     }, 20);
 
