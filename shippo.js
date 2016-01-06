@@ -17,7 +17,7 @@
   var pwm_sycle = 20;		// PWM周期
   var pulse_min = 0.5;		// パルス制御の最小（rad = 0  ）
   var pulse_max = 2.4;		// パルス制御の最大（rad = 180）
-  var pulse_unit = pulse_max - pulse_min / 180;
+  var pulse_unit = (pulse_max - pulse_min) / 180;
 									// 単位ラジアン当たりのパルス制御
 
   var rad       = 90;		// モータの初期位置
