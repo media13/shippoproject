@@ -16,6 +16,8 @@
   // 指定ピンを出力に設定
   gpio.pinMode(ledPin, ZGN.PWM);
 
+  // 
+
   // モータの角度をセットする。
   function ServoSet(radian){
     
