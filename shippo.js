@@ -26,12 +26,12 @@
   モータ制御
 --------------------------------------------------------------------*/
 
+
   // モータの角度をセットする。
   function ServoSet(radian){
     console.log(radian);
     var rad = pulse_min + pulse_unit * radian;
     console.log(rad);
-    var i = 0;
     var servo = setInterval(function(){
       var servo_on = setInterval(function(){
         gpio.digitalWrite(ledPin, ZGN.HIGH);
@@ -41,6 +41,12 @@
     }, pwm_sycle);
   }
 
+  // モータの角度をセットする。
+  function ServoSet(radian){
+    var rad = pulse_min + pulse_unit * radian;
+    var servo_on = setTimeout('gpio.digitalWrite(ledPin, ZGN.HIGH);',);
+    var servo_off = setInterval('gpio.digitalWrite(ledPin, ZGN.LOW);',);
+  }
 /*--------------------------------------------------------------------
   メイン
 --------------------------------------------------------------------*/

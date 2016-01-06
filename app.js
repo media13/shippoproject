@@ -12,7 +12,7 @@
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
     var i = 0;
-    var light = setInterval(function(){
+/*    var light = setInterval(function(){
       if(i%2 == 0){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
         i++;
@@ -24,7 +24,19 @@
         clearInterval(light);
         alert("終了");
       }
-    }, 0.5);
+    }, 0.5);*/
+    var servo = setInterval(function(){
+      var servo_on = setInterval(function(){
+        gpio.digitalWrite(ledPin, ZGN.HIGH);
+        clearInterval(servo_on);
+      }, 250);
+      gpio.digitalWrite(ledPin, ZGN.LOW);
+      i++;;
+      if(i == 100){
+        clearInterval(servo);
+        alert("終了");
+      }
+    }, 500);
 
   });
 
