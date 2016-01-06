@@ -13,7 +13,7 @@
   $(document).on('click', '#on', function() {
     var i = 0;
     var light = setInterval(function(){
-      if(i/2 == 0){
+      if(i%2 == 0){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
       }else{
         gpio.digitalWrite(ledPin, ZGN.LOW); // 消灯
