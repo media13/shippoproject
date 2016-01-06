@@ -34,10 +34,10 @@
     console.log(rad);
     var servo = setInterval(function(){
       var servo_on = setInterval(function(){
-        gpio.digitalWrite(ledPin, ZGN.HIGH);
+        gpio.digitalWrite(ledPin, ZGN.LOW);
         clearInterval(servo_on);
       }, rad);
-      gpio.digitalWrite(ledPin, ZGN.LOW);
+      gpio.digitalWrite(ledPin, ZGN.HIGH);
     }, pwm_sycle);
   }
 
