@@ -11,7 +11,6 @@
 
   // ONボタンをクリック
   $(document).on('click', '#on', function() {
-
     var ms = new Date();
     var i = 0;
 
@@ -24,7 +23,7 @@
         i++;
       }      
     }while(i<10000)
-    alart("終了");
+    alert("終了");
   });
 
   // OFFボタンをクリック
