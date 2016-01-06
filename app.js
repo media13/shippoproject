@@ -17,7 +17,7 @@
 
     do{
       ms.setUTCSeconds();
-      if((ms.getUTCSeconds()/2) < 0){
+      if((ms.getUTCSeconds()/2) = 0){
         gpio.digitalWrite(ledPin, ZGN.HIGH); // 点灯
         i++;
       }else{
