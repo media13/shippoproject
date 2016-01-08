@@ -14,13 +14,13 @@
 
   // Brightボタンをクリック
   $(document).on('click', '#bright', function() {
-    level = level >= 10 ? 10 : level + 0.5; // levelを1上げる
-    gpio.pwmWrite(ledPin, level / 100); // デューティー比の設定
+  //  level = level >= 10 ? 10 : level + 0.5; // levelを1上げる
+    gpio.pwmWrite(ledPin, 0.05); // デューティー比の設定
   });
 
   // Darkボタンをクリック
   $(document).on('click', '#dark', function() {
-    level = level <= 5 ? 5 : level - 0.5; // levelを1下げる
-    gpio.pwmWrite(ledPin, level / 100); // デューティー比の設定
+  //  level = level <= 5 ? 5 : level - 0.5; // levelを1下げる
+    gpio.pwmWrite(ledPin, 0.1); // デューティー比の設定
   });
 });
