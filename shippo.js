@@ -36,13 +36,13 @@
       var servo_on = setInterval(function(){
         gpio.digitalWrite(ledPin, ZGN.HIGH);
         clearInterval(servo_on);
-      }, rad);
+      }, radian);
       gpio.digitalWrite(ledPin, ZGN.LOW);
       i++;
-      if(i == 100){
+      if(i == 50){
         clearInterval(servo);
       }
-    }, pwm_sycle);
+    }, 400);
     gpio.digitalWrite(ledPin, ZGN.LOW);
   }
 
