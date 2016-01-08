@@ -20,7 +20,7 @@
   var pulse_unit = (pulse_max - pulse_min) / 180;
 									// 単位ラジアン当たりのパルス制御
 
-  var rad       = 90;		// モータの初期位置
+  var rad       = 10;		// モータの初期位置
 
 /*--------------------------------------------------------------------
   モータ制御
@@ -39,7 +39,7 @@
       }, rad);
       gpio.digitalWrite(ledPin, ZGN.LOW);
       i++;
-      if(i == 10){
+      if(i == 30){
         clearInterval(servo);
       }
     }, pwm_sycle);
