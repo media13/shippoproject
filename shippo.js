@@ -39,10 +39,11 @@
       }, rad);
       gpio.digitalWrite(ledPin, ZGN.LOW);
       i++;
-      if(i == 1000){
+      if(i == 100){
         clearInterval(servo);
       }
     }, pwm_sycle);
+    gpio.digitalWrite(ledPin, ZGN.LOW);
   }
 
 /*--------------------------------------------------------------------
