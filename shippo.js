@@ -44,6 +44,7 @@
       }
     }, pwm_sycle);
     gpio.digitalWrite(ledPin, ZGN.LOW);
+    console.log("finish");
   }
 
 /*--------------------------------------------------------------------
