@@ -36,11 +36,13 @@
       var motor = setInterval(function(){
         gpio.digitalWrite(motor_out11, ZGN.HIGH);
         gpio.pwmWrite(motor_pwm1, pwm_power);
+        console.log('start');
         clearInterval(motor);
       }, 5000);
 
       gpio.digitalWrite(motor_out11, ZGN.LOW);
       gpio.pwmWrite(motor_pwm1, 0);
+      console.log('stop');
     } else {
       var motor = setInterval(function(){
         gpio.digitalWrite(motor_out21, ZGN.HIGH);
