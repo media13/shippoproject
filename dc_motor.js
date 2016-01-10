@@ -37,22 +37,22 @@
       gpio.digitalWrite(motor_out11, ZGN.HIGH);
       gpio.pwmWrite(motor_pwm1, pwm_power);
       console.log('start');
-      var motor = setInterval(function(){
+      var move_motor = setInterval(function(){
         gpio.digitalWrite(motor_out11, ZGN.LOW);
         gpio.pwmWrite(motor_pwm1, 0);
         console.log('stop');
-        clearInterval(motor);
+        clearInterval(move_motor);
       }, 5000);
     } else {
 
       gpio.digitalWrite(motor_out21, ZGN.HIGH);
       gpio.pwmWrite(motor_pwm2, pwm_power);
       console.log('start');
-      var motor = setInterval(function(){
+      var move_motor = setInterval(function(){
         gpio.digitalWrite(motor_out21, ZGN.LOW);
         gpio.pwmWrite(motor_pwm2, 0);
         console.log('stop');
-        clearInterval(motor);
+        clearInterval(move_motor);
       }, 5000);
     }
   }
