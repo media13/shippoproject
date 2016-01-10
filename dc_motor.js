@@ -33,7 +33,7 @@
 
   function motor(number, time){
     if(number == 1){
-
+      console.log(time);
       gpio.digitalWrite(motor_out11, ZGN.HIGH);
       gpio.pwmWrite(motor_pwm1, pwm_power);
       console.log('start');
