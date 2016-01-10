@@ -82,25 +82,25 @@
 
   // 1ボタンをクリック
   $(document).on('click', '#1', function() {
-    rad = rad >= 999 ? 1000 : time + 1; // モータを+1radする
+    time = time >= 999 ? 1000 : time + 1; // モータを+1radする
     motor(1, time);
   });
 
   // -1ボタンをクリック
   $(document).on('click', '#-1', function() {
-    rad = rad <= 1 ? 0 : time - 1; // モータを-1radする
+    time = time <= 1 ? 0 : time - 1; // モータを-1radする
     motor(1, time);
   });
 
   // 10ボタンをクリック
   $(document).on('click', '#10', function() {
-    rad = rad >= 999 ? 1000 : time + 10; // モータを+10radする
+    time = time >= 999 ? 1000 : time + 10; // モータを+10radする
     motor(1, time);
   });
 
   // -10ボタンをクリック
   $(document).on('click', '#-10', function() {
-    rad = rad <= 10 ? 0 : time - 10; // モータを-10radする
+    time = time <= 10 ? 0 : time - 10; // モータを-10radする
     motor(1, time);
   });
 });
