@@ -35,19 +35,20 @@
     if(number == 1){
       var motor = setInterval(function(){
         gpio.digitalWrite(motor_out11, ZGN.HIGH);
-        gpio.pwmWrite(motor_out11, pwm_power);
+        gpio.pwmWrite(motor_pwm1, pwm_power);
+        clearInterval(motor);
       }, 5000);
 
       gpio.digitalWrite(motor_out11, ZGN.LOW);
-      gpio.pwmWrite(motor_out11, 0);
+      gpio.pwmWrite(motor_pwm1, 0);
     } else {
       var motor = setInterval(function(){
         gpio.digitalWrite(motor_out21, ZGN.HIGH);
-        gpio.pwmWrite(motor_out21, pwm_power);
+        gpio.pwmWrite(motor_pwm2, pwm_power);
       }, 5000);
 
       gpio.digitalWrite(motor_out21, ZGN.LOW);
-      gpio.pwmWrite(motor_out21, 0);
+      gpio.pwmWrite(motor_pwm2, 0);
     }
   }
 
