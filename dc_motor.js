@@ -31,7 +31,7 @@
 
   var pwm_power = 1; // pwmの強さ
 
-  function motor(number){
+  function motor(number, time){
     if(number == 1){
 
       gpio.digitalWrite(motor_out11, ZGN.HIGH);
@@ -42,7 +42,7 @@
         gpio.pwmWrite(motor_pwm1, 0);
         console.log('stop');
         clearInterval(move_motor);
-      }, 5);
+      }, time);
     } else {
 
       gpio.digitalWrite(motor_out21, ZGN.HIGH);
@@ -53,7 +53,7 @@
         gpio.pwmWrite(motor_pwm2, 0);
         console.log('stop');
         clearInterval(move_motor);
-      }, 5000);
+      }, time);
     }
   }
 
@@ -73,8 +73,34 @@
   メイン
 --------------------------------------------------------------------*/
 
+  var time = 30;
+
   // onボタンをクリック
   $(document).on('click', '#on', function() {
-    motor(1);
+    motor(1, time);
+  });
+
+  // 1ボタンをクリック
+  $(document).on('click', '#1', function() {
+    rad = rad >= 999 ? 1000 : time + 1; // モータを+1radする
+    motor(1, time);
+  });
+
+  // -1ボタンをクリック
+  $(document).on('click', '#-1', function() {
+    rad = rad <= 1 ? 0 : time - 1; // モータを-1radする
+    motor(1, time);
+  });
+
+  // 10ボタンをクリック
+  $(document).on('click', '#10', function() {
+    rad = rad >= 999 ? 1000 : time + 10; // モータを+10radする
+    motor(1, time);
+  });
+
+  // -10ボタンをクリック
+  $(document).on('click', '#-10', function() {
+    rad = rad <= 10 ? 0 : time - 10; // モータを-10radする
+    motor(1, time);
   });
 });
