@@ -42,7 +42,7 @@
         gpio.pwmWrite(motor_pwm1, 0);
         console.log('stop');
         clearInterval(move_motor);
-      }, 5000);
+      }, 5);
     } else {
 
       gpio.digitalWrite(motor_out21, ZGN.HIGH);
