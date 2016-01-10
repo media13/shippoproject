@@ -31,17 +31,27 @@
 
   var pwm_power = 1; // pwmの強さ
 
-  function motor1(){
-    var motor = setInterval(function(){
-      gpio.digitalWrite(motor_out11, ZGN.HIGH);
-      gpio.pwmWrite(motor_out11, pwm_power);
-    }, 5000);
+  function motor(number){
+    if(number == 1){
+      var motor = setInterval(function(){
+        gpio.digitalWrite(motor_out11, ZGN.HIGH);
+        gpio.pwmWrite(motor_out11, pwm_power);
+      }, 5000);
 
-    gpio.digitalWrite(motor_out11, ZGN.LOW);
-    gpio.pwmWrite(motor_out11, 0);
+      gpio.digitalWrite(motor_out11, ZGN.LOW);
+      gpio.pwmWrite(motor_out11, 0);
+    } else {
+      var motor = setInterval(function(){
+        gpio.digitalWrite(motor_out21, ZGN.HIGH);
+        gpio.pwmWrite(motor_out21, pwm_power);
+      }, 5000);
+
+      gpio.digitalWrite(motor_out21, ZGN.LOW);
+      gpio.pwmWrite(motor_out21, 0);
+    }
   }
 
-//  function motor1(radian){}  // 角度追加
+//  function motor1(number, radian){}  // 角度追加
 //  function motor1(radian, time){} // 動作時間追加
 
 //  function joy         (){}
@@ -59,6 +69,6 @@
 
   // onボタンをクリック
   $(document).on('click', '#on', function() {
-    motor1();
+    motor(1);
   });
 });
