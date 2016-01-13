@@ -12,15 +12,15 @@
   gpio.pinMode(motor_pwm, ZGN.PWM);		// 指定ピンをPWMに設定
 
   // モータ１
-  var motor_out11 = '2';						// 23番ピンで動作させます
-  var motor_out12 = '3';						// 24番ピンで動作させます
+  var motor_out11 = '2';						// 27番ピンで動作させます
+  var motor_out12 = '3';						// 22番ピンで動作させます
 
   gpio.pinMode(motor_out11, ZGN.OUTPUT);	// 指定ピンを出力に設定
   gpio.pinMode(motor_out12, ZGN.OUTPUT);	// 指定ピンを出力に設定
 
   // モータ２
-  var motor_out21 = '4';						// 5番ピンで動作させます
-  var motor_out22 = '5';						// 6番ピンで動作させます
+  var motor_out21 = '4';						// 23番ピンで動作させます
+  var motor_out22 = '5';						// 24番ピンで動作させます
 
   gpio.pinMode(motor_out21, ZGN.OUTPUT);	// 指定ピンを出力に設定
   gpio.pinMode(motor_out22, ZGN.OUTPUT);	// 指定ピンを出力に設定
@@ -45,6 +45,32 @@
       console.log('stop');
       clearInterval(stop_motor);
     }, time);
+  }
+
+  function buruburu(){
+    var i = 0;
+    do{
+      var m1 = setInterval(function(){
+        gpio.digitalWrite(motor_out11, ZGN.HIGH);
+        clearInterval(m1);
+      }, 500);
+
+      var m2 = setInterval(function(){
+        gpio.digitalWrite(motor_out11, ZGN.LOW);
+        clearInterval(m2);
+      }, 60);
+
+      var m3 = setInterval(function(){
+        gpio.digitalWrite(motor_out12, ZGN.HIGH);
+        clearInterval(m3);
+      }, 500);
+
+      var m4 = setInterval(function(){
+        gpio.digitalWrite(motor_out12, ZGN.LOW);
+        clearInterval(m4);
+      }, 60);
+      i++;
+    } while(i < 10);
   }
 
 //  function joy         (){}
@@ -88,6 +114,9 @@
 
   // startボタンをクリック
   $(document).on('click', '#start', function(){ rotateMotor() })
+
+  // buruburuボタンをクリック
+  $(document).on('click', '#buruburu', function(){ buruburu() })
 
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
