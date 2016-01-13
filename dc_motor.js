@@ -53,7 +53,7 @@
       var m1 = setInterval(function(){
         gpio.digitalWrite(motor_out11, ZGN.HIGH);
         clearInterval(m1);
-      }, 500);
+      }, 1000);
 
       var m2 = setInterval(function(){
         gpio.digitalWrite(motor_out11, ZGN.LOW);
@@ -63,7 +63,7 @@
       var m3 = setInterval(function(){
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
         clearInterval(m3);
-      }, 500);
+      }, 1000);
 
       var m4 = setInterval(function(){
         gpio.digitalWrite(motor_out12, ZGN.LOW);
