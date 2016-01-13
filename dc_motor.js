@@ -97,19 +97,19 @@
 
   // time1ボタンをクリック
   $(document).on('click', '#time1', function(){
-    time = time >= 100 ? 100 : time+1;
+    time = time >= 99 ? 100 : time+1;
   });
   // time-1ボタンをクリック
   $(document).on('click', '#time-1', function(){
-    time = time <= 0 ? 0 : time-1;
+    time = time <= 1 ? 0 : time-1;
   });
   // pwm1ボタンをクリック
   $(document).on('click', '#pwm1', function(){
-    pwm_power = pwm_power >= 1 ? 1 : pwm_power+0.01;
+    pwm_power = pwm_power >= 0.99 ? 1 : pwm_power+0.01;
   });
   // pwm-1ボタンをクリック
   $(document).on('click', '#pwm-1', function(){
-    pwm_power = pwm_power <= 0 ? 0 : pwm_power-0.01;
+    pwm_power = pwm_power <= 0.01 ? 0 : pwm_power-0.01;
   });
 
   // startボタンをクリック
