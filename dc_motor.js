@@ -36,7 +36,7 @@
 
   // モータ回転
   function rotateMotor(){
-    console.log(time);
+    console.log(time, pwm_power);
     gpio.digitalWrite(motor_out, ZGN.HIGH);
     gpio.pwmWrite(motor_pwm, pwm_power);
     console.log('start');
