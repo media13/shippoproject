@@ -69,7 +69,7 @@
         gpio.digitalWrite(motor_out12, ZGN.LOW);
         clearInterval(m4);
       }, 60);
-      i++;
+      console.log(i++);
     } while(i < 10);
   }
 
