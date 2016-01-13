@@ -29,36 +29,24 @@
   モータ制御
 --------------------------------------------------------------------*/
 
-  var pwm_power = 1; // pwmの強さ
+  var motor_out = motor_out11;	// モータの種類、回転方向
+  var motor_pwm = motor_pwm1;		// 
+  var time      = 50;				// 動作時間
+  var pwm_power = 0.5;				// モータのパワー
 
-  function motor(number, time){
-    if(number == 1){
-      console.log(time);
-      gpio.digitalWrite(motor_out11, ZGN.HIGH);
-      gpio.pwmWrite(motor_pwm1, pwm_power);
-      console.log('start');
-      var move_motor = setInterval(function(){
-        gpio.digitalWrite(motor_out11, ZGN.LOW);
-        gpio.pwmWrite(motor_pwm1, 0);
-        console.log('stop');
-        clearInterval(move_motor);
-      }, time);
-    } else {
-
-      gpio.digitalWrite(motor_out21, ZGN.HIGH);
-      gpio.pwmWrite(motor_pwm2, pwm_power);
-      console.log('start');
-      var move_motor = setInterval(function(){
-        gpio.digitalWrite(motor_out21, ZGN.LOW);
-        gpio.pwmWrite(motor_pwm2, 0);
-        console.log('stop');
-        clearInterval(move_motor);
-      }, time);
-    }
+  // モータ回転
+  function rotateMotor(){
+    console.log(time);
+    gpio.digitalWrite(motor_out, ZGN.HIGH);
+    gpio.pwmWrite(motor_pwm, pwm_power);
+    console.log('start');
+    var stop_motor = setInterval(function(){
+      gpio.digitalWrite(motor_out, ZGN.LOW);
+      gpio.pwmWrite(motor_pwm, 0);
+      console.log('stop');
+      clearInterval(stop_motor);
+    }, time);
   }
-
-//  function motor1(number, radian){}  // 角度追加
-//  function motor1(radian, time){} // 動作時間追加
 
 //  function joy         (){}
 //  function trust       (){}
@@ -73,34 +61,43 @@
   メイン
 --------------------------------------------------------------------*/
 
-  var time = 30;
+  // m1cwボタンをクリック
+  $(document).on('click', '#m1cw', function(){ motor_out = motor_out11; });
+  // m1ccwボタンをクリック
+  $(document).on('click', '#m1ccw', function(){ motor_out = motor_out12; });
+  // m2cwボタンをクリック
+  $(document).on('click', '#m2cw', function(){ motor_out = motor_out21; });
+  // m2ccwボタンをクリック
+  $(document).on('click', '#m2ccw', function(){ motor_out = motor_out22; });
 
-  // onボタンをクリック
-  $(document).on('click', '#on', function() {
-    motor(1, time);
+  // time1ボタンをクリック
+  $(document).on('click', '#time1', function(){
+    time = time >= 100 ? 100 : time+1;
+  });
+  // time-1ボタンをクリック
+  $(document).on('click', '#time-1', function(){
+    time = time <= 0 ? 0 : time-1;
+  });
+  // pwm1ボタンをクリック
+  $(document).on('click', '#pwm1', function(){
+    pwm_power = pwm_power >= 1 ? 1 : pwm_power+0.01;
+  });
+  // pwm-1ボタンをクリック
+  $(document).on('click', '#pwm-1', function(){
+    pwm_power = pwm_power <= 0 ? 0 : pwm_power-0.01;
   });
 
-  // 1ボタンをクリック
-  $(document).on('click', '#1', function() {
-    time = time >= 999 ? 1000 : time + 1; // モータを+1radする
-    motor(1, time);
-  });
+  // startボタンをクリック
+  $(document).on('click', '#start', function(){ rotateMotor() })
 
-  // -1ボタンをクリック
-  $(document).on('click', '#-1', function() {
-    time = time <= 1 ? 0 : time - 1; // モータを-1radする
-    motor(1, time);
-  });
-
-  // 10ボタンをクリック
-  $(document).on('click', '#10', function() {
-    time = time >= 999 ? 1000 : time + 10; // モータを+10radする
-    motor(1, time);
-  });
-
-  // -10ボタンをクリック
-  $(document).on('click', '#-10', function() {
-    time = time <= 10 ? 0 : time - 10; // モータを-10radする
-    motor(1, time);
-  });
+/*
+  $(document).on('click', '#joy'         , function(){joy();         });
+  $(document).on('click', '#trust'       , function(){trust();       });
+  $(document).on('click', '#fear'        , function(){fear();        });
+  $(document).on('click', '#surprise'    , function(){surprise();    });
+  $(document).on('click', '#sadness'     , function(){sadness();     });
+  $(document).on('click', '#disgust'     , function(){disgust();     });
+  $(document).on('click', '#anger'       , function(){anger();       });
+  $(document).on('click', '#anticipation', function(){anticipation();});
+*/
 });
