@@ -145,14 +145,12 @@
   $(document).on('click', '#buruburu2', function(){ buruburu2() });
 
   // buruburu3ボタンをクリック
-  $(document).on('click', '#buruburu3', function(){ 
-    for(var i = 0; i < 5; i++){
-      var wait = setInterval(function(){
-        buruburu2();
-        console.log(i);
-        clearInterval(wait);
-      }, 1000);
-    }
+  $(document).on('click', '#buruburu3', function(){
+    buruburu2();
+    buruburu2();
+    buruburu2();
+    buruburu2();
+    buruburu2();
   });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
