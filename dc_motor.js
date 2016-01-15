@@ -76,16 +76,16 @@
           var m4 = setInterval(function(){
             gpio.digitalWrite(motor_out11, ZGN.HIGH);
             clearInterval(m4);
-          }, 2000);
+          }, 500);
           gpio.digitalWrite(motor_out11, ZGN.LOW);
           clearInterval(m3);
-        }, 1500);
+        }, 1000);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
         clearInterval(m2);
-      }, 1000);
+      }, 1500);
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m1);
-    }, 500);
+    }, 2000);
   }
 
 //  function joy         (){}
