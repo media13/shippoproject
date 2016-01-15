@@ -151,13 +151,13 @@
         var m3 = setInterval(function(){
           var m4 = setInterval(function(){
             buruburu2();
-          }, 200);
+          }, 2000);
           buruburu2();
-        }, 200);
+        }, 2000);
         buruburu2();
-      }, 200);
+      }, 2000);
       buruburu2();
-    }, 200);
+    }, 2000);
   });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
