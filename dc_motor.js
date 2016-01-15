@@ -56,22 +56,22 @@
     var m1 = setInterval(function(){
       gpio.digitalWrite(motor_out11, ZGN.HIGH);
       clearInterval(m1);
-    }, 1000);
+    }, 200);
 
      var m2 = setInterval(function(){
       gpio.digitalWrite(motor_out11, ZGN.LOW);
       clearInterval(m2);
-    }, 60);
+    }, 200);
 
      var m3 = setInterval(function(){
       gpio.digitalWrite(motor_out12, ZGN.HIGH);
       clearInterval(m3);
-    }, 1000);
+    }, 200);
 
     var m4 = setInterval(function(){
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m4);
-    }, 60);
+    }, 200);
   }
 
   function buruburu2(){
@@ -81,16 +81,16 @@
           var m4 = setInterval(function(){
             gpio.digitalWrite(motor_out11, ZGN.HIGH);
             clearInterval(m4);
-          }, 500);
+          }, 200);
           gpio.digitalWrite(motor_out11, ZGN.LOW);
           clearInterval(m3);
-        }, 1000);
+        }, 200);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
         clearInterval(m2);
-      }, 1500);
+      }, 200);
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m1);
-    }, 2000);
+    }, 200);
   }
 
 //  function joy         (){}
