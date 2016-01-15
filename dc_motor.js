@@ -37,11 +37,11 @@
   function rotateMotor(){
     console.log(time, pwm_power);
     gpio.digitalWrite(motor_out, ZGN.HIGH);
-    gpio.pwmWrite(motor_pwm, pwm_power);
+//    gpio.pwmWrite(motor_pwm, pwm_power);
     console.log('start');
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out, ZGN.LOW);
-      gpio.pwmWrite(motor_pwm, 0);
+/      gpio.pwmWrite(motor_pwm, 0);
       console.log('stop');
       clearInterval(stop_motor);
     }, time);
@@ -52,6 +52,7 @@
       gpio.pwmWrite(motor_pwm, 0);
   }
 
+/*
   function buruburu(){
     var m1 = setInterval(function(){
       gpio.digitalWrite(motor_out11, ZGN.HIGH);
@@ -73,6 +74,7 @@
       clearInterval(m4);
     }, 200);
   }
+*/
 
   function buruburu2(){
     var m1 = setInterval(function(){
@@ -123,7 +125,7 @@
   $(document).on('click', '#time-1', function(){
     time = time <= 1 ? 0 : time-10;
   });
-  // pwm1ボタンをクリック
+/*  // pwm1ボタンをクリック
   $(document).on('click', '#pwm1', function(){
     pwm_power = pwm_power >= 0.99 ? 1 : pwm_power+0.01;
   });
@@ -131,7 +133,7 @@
   $(document).on('click', '#pwm-1', function(){
     pwm_power = pwm_power <= 0.01 ? 0 : pwm_power-0.01;
   });
-
+*/
   // startボタンをクリック
   $(document).on('click', '#start', function(){ rotateMotor() });
 
@@ -139,7 +141,7 @@
   $(document).on('click', '#stop', function(){ stopMotor() });
 
   // buruburuボタンをクリック
-  $(document).on('click', '#buruburu', function(){ buruburu() });
+//  $(document).on('click', '#buruburu', function(){ buruburu() });
 
   // buruburu2ボタンをクリック
   $(document).on('click', '#buruburu2', function(){ buruburu2() });
