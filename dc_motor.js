@@ -144,6 +144,14 @@
   // buruburu2ボタンをクリック
   $(document).on('click', '#buruburu2', function(){ buruburu2() });
 
+  // buruburu3ボタンをクリック
+  $(document).on('click', '#buruburu3', function(){ 
+    var i = 0;
+    do{
+      buruburu2();
+      i++;
+    }while(i<5);
+  });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
