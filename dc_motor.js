@@ -30,7 +30,7 @@
 --------------------------------------------------------------------*/
 
   var motor_out = motor_out11;	// モータの種類、回転方向
-  var time      = 50;				// 動作時間
+  var time      = 10000;				// 動作時間
   var pwm_power = 0.5;				// モータのパワー
 
   // モータ回転
@@ -114,7 +114,7 @@
 
   // time1ボタンをクリック
   $(document).on('click', '#time1', function(){
-    time = time >= 999 ? 1000 : time+10;
+    time = time >= 99999 ? 100000 : time+100;
   });
   // time-1ボタンをクリック
   $(document).on('click', '#time-1', function(){
@@ -157,6 +157,7 @@
       clearInterval(m1);
     }, 200);
   });
+
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
