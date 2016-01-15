@@ -41,7 +41,7 @@
     console.log('start');
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out, ZGN.LOW);
-/      gpio.pwmWrite(motor_pwm, 0);
+//      gpio.pwmWrite(motor_pwm, 0);
       console.log('stop');
       clearInterval(stop_motor);
     }, time);
