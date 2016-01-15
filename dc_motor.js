@@ -117,11 +117,11 @@
 
   // time1ボタンをクリック
   $(document).on('click', '#time1', function(){
-    time = time >= 99 ? 100 : time+1;
+    time = time >= 999 ? 1000 : time+10;
   });
   // time-1ボタンをクリック
   $(document).on('click', '#time-1', function(){
-    time = time <= 1 ? 0 : time-1;
+    time = time <= 1 ? 0 : time-10;
   });
   // pwm1ボタンをクリック
   $(document).on('click', '#pwm1', function(){
