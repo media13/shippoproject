@@ -155,13 +155,13 @@
           }, 200);
           buruburu2();
           clearInterval(m3);
-        }, 200);
+        }, 1000);
         buruburu2();
         clearInterval(m2);
-      }, 200);
+      }, 1000);
       buruburu2();
       clearInterval(m1);
-    }, 200);
+    }, 1000);
   });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
