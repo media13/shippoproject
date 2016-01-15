@@ -48,29 +48,44 @@
   }
 
   function buruburu(){
-    var i = 0;
-    do{
-      var m1 = setInterval(function(){
-        gpio.digitalWrite(motor_out11, ZGN.HIGH);
-        clearInterval(m1);
-      }, 1000);
+    var m1 = setInterval(function(){
+      gpio.digitalWrite(motor_out11, ZGN.HIGH);
+      clearInterval(m1);
+    }, 1000);
 
+     var m2 = setInterval(function(){
+      gpio.digitalWrite(motor_out11, ZGN.LOW);
+      clearInterval(m2);
+    }, 60);
+
+     var m3 = setInterval(function(){
+      gpio.digitalWrite(motor_out12, ZGN.HIGH);
+      clearInterval(m3);
+    }, 1000);
+
+    var m4 = setInterval(function(){
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m4);
+    }, 60);
+  }
+
+  function buruburu2(){
+    var m1 = setInterval(function(){
       var m2 = setInterval(function(){
-        gpio.digitalWrite(motor_out11, ZGN.LOW);
-        clearInterval(m2);
-      }, 60);
-
-      var m3 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            gpio.digitalWrite(motor_out11, ZGN.HIGH);
+            clearInterval(m4);
+          }, 500);
+          gpio.digitalWrite(motor_out11, ZGN.LOW);
+          clearInterval(m4);
+        }, 1000);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
-        clearInterval(m3);
-      }, 1000);
-
-      var m4 = setInterval(function(){
-        gpio.digitalWrite(motor_out12, ZGN.LOW);
         clearInterval(m4);
-      }, 60);
-      console.log(i++);
-    } while(i < 10);
+      }, 1500);
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m4);
+    }, 2000);
   }
 
 //  function joy         (){}
@@ -113,10 +128,13 @@
   });
 
   // startボタンをクリック
-  $(document).on('click', '#start', function(){ rotateMotor() })
+  $(document).on('click', '#start', function(){ rotateMotor() });
 
   // buruburuボタンをクリック
-  $(document).on('click', '#buruburu', function(){ buruburu() })
+  $(document).on('click', '#buruburu', function(){ buruburu() });
+
+  // buruburu2ボタンをクリック
+  $(document).on('click', '#buruburu2', function(){ buruburu2() });
 
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
