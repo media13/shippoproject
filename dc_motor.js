@@ -152,7 +152,7 @@
           var m4 = setInterval(function(){
             buruburu2();
             clearInterval(m4);
-          }, 200);
+          }, 1000);
           buruburu2();
           clearInterval(m3);
         }, 1000);
@@ -161,7 +161,7 @@
       }, 1000);
       buruburu2();
       clearInterval(m1);
-    }, 1000);
+    }, 200);
   });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
