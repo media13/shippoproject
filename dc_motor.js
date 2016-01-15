@@ -47,11 +47,6 @@
     }, time);
   }
 
-  function stopMotor(){
-      gpio.digitalWrite(motor_out, ZGN.LOW);
-      gpio.pwmWrite(motor_pwm, 0);
-  }
-
 /*
   function buruburu(){
     var m1 = setInterval(function(){
@@ -136,10 +131,7 @@
 */
   // startボタンをクリック
   $(document).on('click', '#start', function(){ rotateMotor() });
-
-  // stopボタンをクリック
-  $(document).on('click', '#stop', function(){ stopMotor() });
-
+    
   // buruburuボタンをクリック
 //  $(document).on('click', '#buruburu', function(){ buruburu() });
 
