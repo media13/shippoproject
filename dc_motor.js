@@ -151,12 +151,16 @@
         var m3 = setInterval(function(){
           var m4 = setInterval(function(){
             buruburu2();
+            clearInterval(m4);
           }, 2000);
           buruburu2();
+          clearInterval(m3);
         }, 2000);
         buruburu2();
+        clearInterval(m2);
       }, 2000);
       buruburu2();
+      clearInterval(m1);
     }, 2000);
   });
 /*
