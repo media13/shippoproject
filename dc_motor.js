@@ -146,7 +146,7 @@
 
   // buruburu3ボタンをクリック
   $(document).on('click', '#buruburu3', function(){ 
-    for(var i = 1; i <= 5; i++){ buruburu2(); }
+    for(var i = 1; i <= 5; i++){ buruburu2(); console.log(i);}
   });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
