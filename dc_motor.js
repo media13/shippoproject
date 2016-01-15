@@ -78,13 +78,13 @@
             clearInterval(m4);
           }, 2000);
           gpio.digitalWrite(motor_out11, ZGN.LOW);
-          clearInterval(m4);
+          clearInterval(m3);
         }, 1500);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
-        clearInterval(m4);
+        clearInterval(m2);
       }, 1000);
       gpio.digitalWrite(motor_out12, ZGN.LOW);
-      clearInterval(m4);
+      clearInterval(m1);
     }, 500);
   }
 
