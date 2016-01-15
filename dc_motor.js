@@ -146,11 +146,18 @@
 
   // buruburu3ボタンをクリック
   $(document).on('click', '#buruburu3', function(){
-    buruburu2();
-    buruburu2();
-    buruburu2();
-    buruburu2();
-    buruburu2();
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            buruburu2();
+          }, 200);
+          buruburu2();
+        }, 200);
+        buruburu2();
+      }, 200);
+      buruburu2();
+    }, 200);
   });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
