@@ -146,9 +146,9 @@
 
   // buruburu3ボタンをクリック
   $(document).on('click', '#buruburu3', function(){ 
-    for(var i = 1; i <= 5; i++){
-      buruburu2();
+    for(var i = 0; i <= 5; i++){
       var wait = setInterval(function(){
+        buruburu2();
         console.log(i);
         clearInterval(wait);
       }, 1000);
