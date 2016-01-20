@@ -101,9 +101,9 @@
 
   // cw5s
   function motion1(){
-    gpio.digitalWrite(motor_out11, ZGN.HIGH);
+    gpio.digitalWrite(motor_out11, ZGN.LOW);
     var m1 = setInterval(function(){
-      gpio.digitalWrite(motor_out11, ZGN.LOW);
+      gpio.digitalWrite(motor_out11, ZGNHIGH);
       clearInterval(m1);
     },5000) 
   }
