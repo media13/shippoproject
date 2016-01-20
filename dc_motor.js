@@ -103,7 +103,7 @@
   function motion1(){
     gpio.digitalWrite(motor_out11, ZGN.LOW);
     var m1 = setInterval(function(){
-      gpio.digitalWrite(motor_out11, ZGNHIGH);
+      gpio.digitalWrite(motor_out11, ZGN.HIGH);
       clearInterval(m1);
     },5000) 
   }
@@ -205,7 +205,7 @@
       }, 1000);
       buruburu2();
       clearInterval(m1);
-    }, 200);
+    }, 1000);
   });
 
   // motion1ボタンをクリック
