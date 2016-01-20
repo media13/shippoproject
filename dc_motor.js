@@ -7,9 +7,9 @@
 
   var gpio        = ZGN.term('1').gpio;	// TerminalのGPIOインスタンスを取得
 
-  // PWM
+/*// PWM
   var motor_pwm  = '1';						// 18番ピンで動作させます
-  gpio.pinMode(motor_pwm, ZGN.PWM);		// 指定ピンをPWMに設定
+  gpio.pinMode(motor_pwm, ZGN.PWM);		// 指定ピンをPWMに設定 */
 
   // モータ１
   var motor_out11 = '2';						// 27番ピンで動作させます
@@ -99,6 +99,64 @@
 //  function anger       (){}
 //  function anticipation(){}
 
+  // cw5s
+  function motion1(){
+    gpio.digitalWrite(motor_out11, ZGN.HIGH);
+    var m1 = setInterval(function(){
+      gpio.digitalWrite(motor_out11, ZGN.LOW);
+      clearInterval(m1);
+    },5000) 
+  }
+
+  // ccw5s
+  function motion2(){
+    gpio.digitalWrite(motor_out12, ZGN.HIGH);
+    var m1 = setInterval(function(){
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m1);
+    },5000) 
+  }
+
+  // cw200ms stop200ms ccw200ms stop200ms
+  function motion3(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            gpio.digitalWrite(motor_out11, ZGN.HIGH);
+            clearInterval(m4);
+          }, 200);
+          gpio.digitalWrite(motor_out11, ZGN.LOW);
+          clearInterval(m3);
+        }, 200);
+        gpio.digitalWrite(motor_out12, ZGN.HIGH);
+        clearInterval(m2);
+      }, 200);
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m1);
+    }, 200);
+  }
+
+  // cw200ms stop600ms ccw200ms stop600ms
+  function motion4(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            gpio.digitalWrite(motor_out11, ZGN.HIGH);
+            clearInterval(m4);
+          }, 200);
+          gpio.digitalWrite(motor_out11, ZGN.LOW);
+          clearInterval(m3);
+        }, 600);
+        gpio.digitalWrite(motor_out12, ZGN.HIGH);
+        clearInterval(m2);
+      }, 200);
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m1);
+    }, 600);
+  }
+
 /*--------------------------------------------------------------------
   メイン
 --------------------------------------------------------------------*/
@@ -120,15 +178,7 @@
   $(document).on('click', '#time-1', function(){
     time = time <= 1 ? 0 : time-10;
   });
-/*  // pwm1ボタンをクリック
-  $(document).on('click', '#pwm1', function(){
-    pwm_power = pwm_power >= 0.99 ? 1 : pwm_power+0.01;
-  });
-  // pwm-1ボタンをクリック
-  $(document).on('click', '#pwm-1', function(){
-    pwm_power = pwm_power <= 0.01 ? 0 : pwm_power-0.01;
-  });
-*/
+
   // startボタンをクリック
   $(document).on('click', '#start', function(){ rotateMotor() });
     
@@ -157,6 +207,18 @@
       clearInterval(m1);
     }, 200);
   });
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion1', function(){ motion1() });
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion2', function(){ motion2() });
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion3', function(){ motion3() });
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion4', function(){ motion4() });
 
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
