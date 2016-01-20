@@ -105,16 +105,16 @@
     var m1 = setInterval(function(){
       gpio.digitalWrite(motor_out11, ZGN.HIGH);
       clearInterval(m1);
-    },5000) 
+    },2000) 
   }
 
   // ccw5s
   function motion2(){
-    gpio.digitalWrite(motor_out12, ZGN.HIGH);
+    gpio.digitalWrite(motor_out12, ZGN.LOW);
     var m1 = setInterval(function(){
-      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      gpio.digitalWrite(motor_out12, ZGN.HIGH);
       clearInterval(m1);
-    },5000) 
+    },2000) 
   }
 
   // cw200ms stop200ms ccw200ms stop200ms
@@ -155,6 +155,26 @@
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m1);
     }, 600);
+  }
+
+  // cw600ms stop200ms ccw600ms stop200ms
+  function motion5(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            gpio.digitalWrite(motor_out11, ZGN.HIGH);
+            clearInterval(m4);
+          }, 600);
+          gpio.digitalWrite(motor_out11, ZGN.LOW);
+          clearInterval(m3);
+        }, 200);
+        gpio.digitalWrite(motor_out12, ZGN.HIGH);
+        clearInterval(m2);
+      }, 600);
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m1);
+    }, 200);
   }
 
 /*--------------------------------------------------------------------
@@ -220,6 +240,8 @@
   // motion1ボタンをクリック
   $(document).on('click', '#motion4', function(){ motion4() });
 
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion5', function(){ motion5() });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
