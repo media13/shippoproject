@@ -137,7 +137,7 @@
     }, 200);
   }
 
-  // cw200ms stop600ms ccw200ms stop600ms
+  // cw300ms stop1000ms ccw300ms stop1000ms
   function motion4(){
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
@@ -176,6 +176,8 @@
       clearInterval(m1);
     }, 200);
   }
+
+  
 
 /*--------------------------------------------------------------------
   メイン
@@ -242,6 +244,42 @@
 
   // motion1ボタンをクリック
   $(document).on('click', '#motion5', function(){ motion5() });
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion6', function(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        motion3();
+        clearInterval(m2); 
+      }, 1000);
+      motion3();
+      clearInterval(m2);
+    }, 1000);
+  }
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion7', function(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        motion4();
+        clearInterval(m2); 
+      }, 1000);
+      motion4();
+      clearInterval(m2);
+    }, 1000);
+  }
+
+  // motion1ボタンをクリック
+  $(document).on('click', '#motion8', function(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        motion5();
+        clearInterval(m2); 
+      }, 1000);
+      motion5();
+      clearInterval(m2);
+    }, 1000);
+  }
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
