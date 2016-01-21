@@ -172,7 +172,7 @@
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out21, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 1000);
+    }, 100);
   }
 
   // モータdown(short)
@@ -181,25 +181,25 @@
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out22, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 1000);
+    }, 100);
   }
 
   // モータup(long)
-  function upsMotor(){
+  function uplMotor(){
     gpio.digitalWrite(motor_out21, ZGN.HIGH);
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out21, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 3000);
+    }, 300);
   }
 
   // モータdown(long)
-  function downsMotor(){
+  function downlMotor(){
     gpio.digitalWrite(motor_out22, ZGN.HIGH);
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out22, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 3000);
+    }, 300);
   }
 
 /*--------------------------------------------------------------------
