@@ -253,9 +253,9 @@
         clearInterval(m2); 
       }, 1000);
       motion3();
-      clearInterval(m2);
+      clearInterval(m1);
     }, 1000);
-  }
+  });
 
   // motion1ボタンをクリック
   $(document).on('click', '#motion7', function(){
@@ -265,9 +265,9 @@
         clearInterval(m2); 
       }, 1000);
       motion4();
-      clearInterval(m2);
+      clearInterval(m1);
     }, 1000);
-  }
+  });
 
   // motion1ボタンをクリック
   $(document).on('click', '#motion8', function(){
@@ -277,9 +277,9 @@
         clearInterval(m2); 
       }, 1000);
       motion5();
-      clearInterval(m2);
+      clearInterval(m1);
     }, 1000);
-  }
+  });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
