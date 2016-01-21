@@ -162,7 +162,7 @@
     }, 200);
   }
 
-  // cw100ms stop700ms ccw100ms stop700ms
+  // cw100ms stop1100ms ccw100ms stop1100ms
   function motion6(){
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
@@ -173,13 +173,13 @@
           }, 100);
           gpio.digitalWrite(motor_out11, ZGN.LOW);
           clearInterval(m3);
-        }, 700);
+        },1100);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
         clearInterval(m2);
       }, 100);
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m1);
-    }, 700);
+    }, 1100);
   }
 
 /*--------------------------------------------------------------------
