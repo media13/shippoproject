@@ -162,6 +162,26 @@
     }, 200);
   }
 
+  // cw100ms stop700ms ccw100ms stop700ms
+  function motion6(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            gpio.digitalWrite(motor_out11, ZGN.HIGH);
+            clearInterval(m4);
+          }, 100);
+          gpio.digitalWrite(motor_out11, ZGN.LOW);
+          clearInterval(m3);
+        }, 700);
+        gpio.digitalWrite(motor_out12, ZGN.HIGH);
+        clearInterval(m2);
+      }, 100);
+      gpio.digitalWrite(motor_out12, ZGN.LOW);
+      clearInterval(m1);
+    }, 700);
+  }
+
 /*--------------------------------------------------------------------
   モータ制御(本体)
 --------------------------------------------------------------------*/
@@ -272,16 +292,7 @@
   $(document).on('click', '#motion5', function(){ motion5() });
 
   // motion1ボタンをクリック
-  $(document).on('click', '#motion6', function(){
-    var m1 = setInterval(function(){
-      var m2 = setInterval(function(){
-        motion3();
-        clearInterval(m2); 
-      }, 1000);
-      motion3();
-      clearInterval(m1);
-    }, 1000);
-  });
+  $(document).on('click', '#motion6', function(){ motion6() });
 
   // motion1ボタンをクリック
   $(document).on('click', '#motion7', function(){
