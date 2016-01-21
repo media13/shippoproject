@@ -26,52 +26,37 @@
   gpio.pinMode(motor_out22, ZGN.OUTPUT);	// 指定ピンを出力に設定
 
 /*--------------------------------------------------------------------
-  モータ制御
+  モータ制御(本体)
 --------------------------------------------------------------------*/
 
   var motor_out = motor_out11;	// モータの種類、回転方向
-  var time      = 10000;				// 動作時間
-  var pwm_power = 0.5;				// モータのパワー
+  var time      = 1000;				// 動作時間
 
-  // モータ回転
+  // モータrotate
   function rotateMotor(){
-    console.log(time, pwm_power);
+    console.log(time);
     gpio.digitalWrite(motor_out, ZGN.HIGH);
-//    gpio.pwmWrite(motor_pwm, pwm_power);
     console.log('start');
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out, ZGN.LOW);
-//      gpio.pwmWrite(motor_pwm, 0);
       console.log('stop');
       clearInterval(stop_motor);
     }, time);
   }
 
-/*
-  function buruburu(){
-    var m1 = setInterval(function(){
-      gpio.digitalWrite(motor_out11, ZGN.HIGH);
-      clearInterval(m1);
-    }, 200);
-
-     var m2 = setInterval(function(){
-      gpio.digitalWrite(motor_out11, ZGN.LOW);
-      clearInterval(m2);
-    }, 200);
-
-     var m3 = setInterval(function(){
-      gpio.digitalWrite(motor_out12, ZGN.HIGH);
-      clearInterval(m3);
-    }, 200);
-
-    var m4 = setInterval(function(){
-      gpio.digitalWrite(motor_out12, ZGN.LOW);
-      clearInterval(m4);
-    }, 200);
+  // モータstart
+  function startMotor(){
+    gpio.digitalWrite(motor_out, ZGN.HIGH);
+    console.log('start');
   }
-*/
 
-  function buruburu2(){
+  // モータstop
+  function stopMotor(){
+    gpio.digitalWrite(motor_out, ZGN.LOW);
+    console.log('stop');
+  }
+
+  function buruburu(){
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
         var m3 = setInterval(function(){
@@ -177,7 +162,45 @@
     }, 200);
   }
 
-  
+/*--------------------------------------------------------------------
+  モータ制御(本体)
+--------------------------------------------------------------------*/
+
+  // モータup(short)
+  function upsMotor(){
+    gpio.digitalWrite(motor_out21, ZGN.HIGH);
+    var stop_motor = setInterval(function(){
+      gpio.digitalWrite(motor_out21, ZGN.LOW);
+      clearInterval(stop_motor);
+    }, 1000);
+  }
+
+  // モータdown(short)
+  function downsMotor(){
+    gpio.digitalWrite(motor_out22, ZGN.HIGH);
+    var stop_motor = setInterval(function(){
+      gpio.digitalWrite(motor_out22, ZGN.LOW);
+      clearInterval(stop_motor);
+    }, 1000);
+  }
+
+  // モータup(long)
+  function upsMotor(){
+    gpio.digitalWrite(motor_out21, ZGN.HIGH);
+    var stop_motor = setInterval(function(){
+      gpio.digitalWrite(motor_out21, ZGN.LOW);
+      clearInterval(stop_motor);
+    }, 3000);
+  }
+
+  // モータdown(long)
+  function downsMotor(){
+    gpio.digitalWrite(motor_out22, ZGN.HIGH);
+    var stop_motor = setInterval(function(){
+      gpio.digitalWrite(motor_out22, ZGN.LOW);
+      clearInterval(stop_motor);
+    }, 3000);
+  }
 
 /*--------------------------------------------------------------------
   メイン
@@ -192,40 +215,43 @@
   // m2ccwボタンをクリック
   $(document).on('click', '#m2ccw', function(){ motor_out = motor_out22; });
 
-  // time1ボタンをクリック
+  // time100ボタンをクリック
   $(document).on('click', '#time1', function(){
-    time = time >= 99999 ? 100000 : time+100;
+    time = time >= 9899 ? 10000 : time+100;
   });
-  // time-1ボタンをクリック
+  // time-100ボタンをクリック
   $(document).on('click', '#time-1', function(){
-    time = time <= 1 ? 0 : time-10;
+    time = time <= 101 ? 0 : time-100;
   });
+
+  // rotateボタンをクリック
+  $(document).on('click', '#rotate', function(){ rotateMotor() });
 
   // startボタンをクリック
-  $(document).on('click', '#start', function(){ rotateMotor() });
+  $(document).on('click', '#start', function(){ startMotor() });
+
+  // stopボタンをクリック
+  $(document).on('click', '#stop', function(){ stopMotor() });
     
   // buruburuボタンをクリック
-//  $(document).on('click', '#buruburu', function(){ buruburu() });
-
-  // buruburu2ボタンをクリック
-  $(document).on('click', '#buruburu2', function(){ buruburu2() });
+  $(document).on('click', '#buruburu', function(){ buruburu() });
 
   // buruburu3ボタンをクリック
-  $(document).on('click', '#buruburu3', function(){
+  $(document).on('click', '#buruburu2', function(){
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
         var m3 = setInterval(function(){
           var m4 = setInterval(function(){
-            buruburu2();
+            buruburu();
             clearInterval(m4);
           }, 1000);
-          buruburu2();
+          buruburu();
           clearInterval(m3);
         }, 1000);
-        buruburu2();
+        buruburu();
         clearInterval(m2);
       }, 1000);
-      buruburu2();
+      buruburu();
       clearInterval(m1);
     }, 1000);
   });
@@ -280,6 +306,18 @@
       clearInterval(m1);
     }, 1000);
   });
+
+  // upsmotorボタンをクリック
+  $(document).on('click', '#upsmotor', function(){ upsmotor() });
+
+  // downsmotorボタンをクリック
+  $(document).on('click', '#downsmotor', function(){ downsmotor() });
+
+  // uplmotorボタンをクリック
+  $(document).on('click', '#uplmotor', function(){ uplmotor() });
+
+  // downlmotorボタンをクリック
+  $(document).on('click', '#downlmotor', function(){ downlmotor() });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
