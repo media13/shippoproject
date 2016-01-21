@@ -216,11 +216,11 @@
   $(document).on('click', '#m2ccw', function(){ motor_out = motor_out22; });
 
   // time100ボタンをクリック
-  $(document).on('click', '#time1', function(){
+  $(document).on('click', '#time100', function(){
     time = time >= 9899 ? 10000 : time+100;
   });
   // time-100ボタンをクリック
-  $(document).on('click', '#time-1', function(){
+  $(document).on('click', '#time-100', function(){
     time = time <= 101 ? 0 : time-100;
   });
 
