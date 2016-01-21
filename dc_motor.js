@@ -308,16 +308,16 @@
   });
 
   // upsmotorボタンをクリック
-  $(document).on('click', '#upsmotor', function(){ upsmotor() });
+  $(document).on('click', '#upsmotor', function(){ upsMotor() });
 
   // downsmotorボタンをクリック
-  $(document).on('click', '#downsmotor', function(){ downsmotor() });
+  $(document).on('click', '#downsmotor', function(){ downsMotor() });
 
   // uplmotorボタンをクリック
-  $(document).on('click', '#uplmotor', function(){ uplmotor() });
+  $(document).on('click', '#uplmotor', function(){ uplMotor() });
 
   // downlmotorボタンをクリック
-  $(document).on('click', '#downlmotor', function(){ downlmotor() });
+  $(document).on('click', '#downlmotor', function(){ downlMotor() });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
