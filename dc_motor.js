@@ -173,13 +173,13 @@
           }, 100);
           gpio.digitalWrite(motor_out11, ZGN.LOW);
           clearInterval(m3);
-        },1100);
+        },3000);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
         clearInterval(m2);
       }, 100);
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m1);
-    }, 1100);
+    }, 3000);
   }
 
 /*--------------------------------------------------------------------
