@@ -358,6 +358,9 @@
   // downlmotorボタンをクリック
   $(document).on('click', '#downlmotor', function(){ dlMotor() });
 
+  // udmotorボタンをクリック
+  $(document).on('click', '#udmotor', function(){ UDMotor() });
+
   $(document).on('click', '#joy'         , function(){joy();         });
 /*  $(document).on('click', '#trust'       , function(){trust();       });
   $(document).on('click', '#fear'        , function(){fear();        });
