@@ -217,13 +217,13 @@
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
         var m3 = setInterval(function(){
-          usMotor();
+          ulMotor();
           clearInterval(m3);
         },1000);
         dlMotor();
         clearInterval(m2);
       },1000);
-      usMotor();
+      ulMotor();
       clearInterval(m1);
     },1000);
   }
@@ -232,7 +232,10 @@
   感情
 --------------------------------------------------------------------*/
 
-//  function joy         (){}
+  function joy         (){
+    motion3();
+    UDMotor();
+  }
 //  function trust       (){}
 //  function fear        (){}
 //  function surprise    (){}
