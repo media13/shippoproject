@@ -113,7 +113,7 @@
     }, 200);
   }
 
-  // cw300ms stop1000ms ccw300ms stop1000ms
+  // cw200ms stop1000ms ccw200ms stop1000ms
   function motion4(){
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
@@ -121,13 +121,13 @@
           var m4 = setInterval(function(){
             gpio.digitalWrite(motor_out11, ZGN.HIGH);
             clearInterval(m4);
-          }, 300);
+          }, 200);
           gpio.digitalWrite(motor_out11, ZGN.LOW);
           clearInterval(m3);
         }, 1000);
         gpio.digitalWrite(motor_out12, ZGN.HIGH);
         clearInterval(m2);
-      }, 300);
+      }, 200);
       gpio.digitalWrite(motor_out12, ZGN.LOW);
       clearInterval(m1);
     }, 1000);
