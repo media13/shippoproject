@@ -233,8 +233,14 @@
 --------------------------------------------------------------------*/
 
   function joy         (){
-    motion3();
-    UDMotor();
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        motion3();
+        clearInterval(m2);
+      },1000);
+      UDMotor();
+      clearInterval(m1);
+    }, 1000);
   }
 //  function trust       (){}
 //  function fear        (){}
@@ -351,9 +357,9 @@
 
   // downlmotorボタンをクリック
   $(document).on('click', '#downlmotor', function(){ dlMotor() });
-/*
+
   $(document).on('click', '#joy'         , function(){joy();         });
-  $(document).on('click', '#trust'       , function(){trust();       });
+/*  $(document).on('click', '#trust'       , function(){trust();       });
   $(document).on('click', '#fear'        , function(){fear();        });
   $(document).on('click', '#surprise'    , function(){surprise();    });
   $(document).on('click', '#sadness'     , function(){sadness();     });
