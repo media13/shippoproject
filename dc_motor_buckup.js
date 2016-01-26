@@ -237,10 +237,10 @@
       var m2 = setInterval(function(){
         motion3();
         clearInterval(m2);
-      },1000);
-      UDMotor();
+      },2000);
+      dlMotor();
       clearInterval(m1);
-    }, 1000);
+    }, 2000);
   }
 //  function trust       (){}
 //  function fear        (){}
