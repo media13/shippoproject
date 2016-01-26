@@ -75,15 +75,6 @@
     }, 200);
   }
 
-//  function joy         (){}
-//  function trust       (){}
-//  function fear        (){}
-//  function surprise    (){}
-//  function sadness     (){}
-//  function disgust     (){}
-//  function anger       (){}
-//  function anticipation(){}
-
   // cw5s
   function motion1(){
     gpio.digitalWrite(motor_out11, ZGN.LOW);
@@ -102,7 +93,7 @@
     },1000) 
   }
 
-  // cw200ms stop200ms ccw200ms stop200ms
+  // cw200ms stop200ms ccw200ms stop200ms trust surprise anticipation
   function motion3(){
     var m1 = setInterval(function(){
       var m2 = setInterval(function(){
@@ -183,44 +174,72 @@
   }
 
 /*--------------------------------------------------------------------
-  モータ制御(本体)
+  モータ制御(先端)
 --------------------------------------------------------------------*/
 
   // モータup(short)
-  function upsMotor(){
+  function usMotor(){
     gpio.digitalWrite(motor_out21, ZGN.HIGH);
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out21, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 300);
+    }, 100);
   }
 
   // モータdown(short)
-  function downsMotor(){
+  function dsMotor(){
     gpio.digitalWrite(motor_out22, ZGN.HIGH);
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out22, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 300);
+    }, 100);
   }
 
   // モータup(long)
-  function uplMotor(){
+  function ulMotor(){
     gpio.digitalWrite(motor_out21, ZGN.HIGH);
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out21, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 900);
+    }, 500);
   }
 
   // モータdown(long)
-  function downlMotor(){
+  function dlMotor(){
     gpio.digitalWrite(motor_out22, ZGN.HIGH);
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out22, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 900);
+    }, 500);
   }
+
+  function UDMotor(){
+    var m1 = setInterval(function(){
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          usMotor();
+          clearInterval(m3);
+        },1000);
+        dlMotor();
+        clearInterval(m2);
+      },1000);
+      usMotor();
+      clearInterval(m1);
+    },1000);
+  }
+
+/*--------------------------------------------------------------------
+  感情
+--------------------------------------------------------------------*/
+
+//  function joy         (){}
+//  function trust       (){}
+//  function fear        (){}
+//  function surprise    (){}
+//  function sadness     (){}
+//  function disgust     (){}
+//  function anger       (){}
+//  function anticipation(){}
 
 /*--------------------------------------------------------------------
   メイン
@@ -319,16 +338,16 @@
   });
 
   // upsmotorボタンをクリック
-  $(document).on('click', '#upsmotor', function(){ upsMotor() });
+  $(document).on('click', '#upsmotor', function(){ usMotor() });
 
   // downsmotorボタンをクリック
-  $(document).on('click', '#downsmotor', function(){ downsMotor() });
+  $(document).on('click', '#downsmotor', function(){ dsMotor() });
 
   // uplmotorボタンをクリック
-  $(document).on('click', '#uplmotor', function(){ uplMotor() });
+  $(document).on('click', '#uplmotor', function(){ ulMotor() });
 
   // downlmotorボタンをクリック
-  $(document).on('click', '#downlmotor', function(){ downlMotor() });
+  $(document).on('click', '#downlmotor', function(){ dlMotor() });
 /*
   $(document).on('click', '#joy'         , function(){joy();         });
   $(document).on('click', '#trust'       , function(){trust();       });
