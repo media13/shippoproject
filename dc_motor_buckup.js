@@ -260,8 +260,25 @@
 }
 
   function disgust     (){
-
-}
+    var m1 = setInterval(function(){
+      var cnt = 0;
+      var m2 = setInterval(function(){
+        var m3 = setInterval(function(){
+          var m4 = setInterval(function(){
+            ulMotor();
+            clearInterval(m4);
+          },3000);
+          motion4;
+          clearInterval(m3);
+        },3000);
+        dsMotoro();
+        clearInterval(m2);
+      },3000);
+      motion4();
+      cnt++;
+      if(cnt>=5)clearInterval();
+    },3000);
+  }
 
   function anger       (){
     var m1 = setInterval(function(){
@@ -274,7 +291,7 @@
     var m1 = setInterval(function(){
       motion4();
       cnt++;
-      if(cnt>=5)clearInterval(m1);
+      if(cnt>5)clearInterval(m1);
     },3000);
   }
 
