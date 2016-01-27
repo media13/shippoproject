@@ -268,10 +268,10 @@
             ulMotor();
             clearInterval(m4);
           },3000);
-          motion4;
+          motion4();
           clearInterval(m3);
         },3000);
-        dsMotoro();
+        dsMotor();
         clearInterval(m2);
       },3000);
       motion4();
