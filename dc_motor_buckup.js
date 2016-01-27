@@ -201,7 +201,7 @@
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out21, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 500);
+    }, 1000);
   }
 
   // モータdown(long)
@@ -210,7 +210,7 @@
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out22, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 500);
+    }, 1000);
   }
 
   function UDMotor(){
@@ -249,32 +249,24 @@
 
   function fear        (){
 
-}
+  }
 
   function surprise    (){
 
-}
+  }
 
   function sadness     (){
 
-}
+  }
 
   function disgust     (){
     var m1 = setInterval(function(){
       var cnt = 0;
       var m2 = setInterval(function(){
-        var m3 = setInterval(function(){
-          var m4 = setInterval(function(){
-            ulMotor();
-            clearInterval(m4);
-          },3000);
-          motion4();
-          clearInterval(m3);
-        },3000);
-        dlMotor();
+        ulMotor();
         clearInterval(m2);
       },3000);
-      motion4();
+      dsMotor();
       cnt++;
       if(cnt>=5)clearInterval(m1);
     },3000);
