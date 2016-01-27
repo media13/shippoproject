@@ -270,9 +270,12 @@
   }
 
   function anticipation(){
+    var cnt=0;
     var m1 = setInterval(function(){
       motion4();
-    },1500);
+      cnt++;
+      if(cnt>=5)clearInterval(m1);
+    },3000);
   }
 
 /*--------------------------------------------------------------------
