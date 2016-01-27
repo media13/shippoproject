@@ -388,6 +388,6 @@
 //  $(document).on('click', '#sadness'     , function(){sadness();     });
 //  $(document).on('click', '#disgust'     , function(){disgust();     });
   $(document).on('click', '#anger'       , function(){anger();       });
-//  $(document).on('click', '#anticipation', function(){anticipation();});
+  $(document).on('click', '#anticipation', function(){anticipation();});
 
 });
