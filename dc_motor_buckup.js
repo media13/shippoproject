@@ -237,17 +237,22 @@
       var m2 = setInterval(function(){
         motion3();
         clearInterval(m2);
-      },2000);
+      },1500);
       dlMotor();
       clearInterval(m1);
-    }, 2000);
+    }, 1500);
   }
 //  function trust       (){}
 //  function fear        (){}
 //  function surprise    (){}
 //  function sadness     (){}
 //  function disgust     (){}
-//  function anger       (){}
+  function anger       (){
+    var m1 = setInterval(function(){
+      motion5();
+      clearInterval(m1);
+    }, 1500);
+  }
 //  function anticipation(){}
 
 /*--------------------------------------------------------------------
