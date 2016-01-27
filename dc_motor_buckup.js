@@ -242,18 +242,33 @@
       clearInterval(m1);
     }, 1500);
   }
-//  function trust       (){}
+
+  function trust       (){
+    
+  }
+
 //  function fear        (){}
 //  function surprise    (){}
 //  function sadness     (){}
 //  function disgust     (){}
+
   function anger       (){
     var m1 = setInterval(function(){
       motion5();
       clearInterval(m1);
     }, 1500);
   }
-//  function anticipation(){}
+
+  function anticipation(){
+    var m1 = setInterval(function(){
+      ulMotor();
+      clearInterval(m1);
+      var m2 = setInterval(function(){
+        dsMotor();
+        clearInterval(m2);
+      }
+    }
+  }
 
 /*--------------------------------------------------------------------
   メイン
