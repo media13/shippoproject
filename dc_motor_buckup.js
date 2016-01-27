@@ -271,12 +271,12 @@
           motion4();
           clearInterval(m3);
         },3000);
-        dsMotor();
+        dlMotor();
         clearInterval(m2);
       },3000);
       motion4();
       cnt++;
-      if(cnt>=5)clearInterval();
+      if(cnt>=5)clearInterval(m1);
     },3000);
   }
 
