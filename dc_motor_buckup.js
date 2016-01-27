@@ -367,12 +367,12 @@
   $(document).on('click', '#udmotor', function(){ UDMotor() });
 
   $(document).on('click', '#joy'         , function(){joy();         });
-/*  $(document).on('click', '#trust'       , function(){trust();       });
-  $(document).on('click', '#fear'        , function(){fear();        });
-  $(document).on('click', '#surprise'    , function(){surprise();    });
-  $(document).on('click', '#sadness'     , function(){sadness();     });
-  $(document).on('click', '#disgust'     , function(){disgust();     });
+//  $(document).on('click', '#trust'       , function(){trust();       });
+//  $(document).on('click', '#fear'        , function(){fear();        });
+//  $(document).on('click', '#surprise'    , function(){surprise();    });
+//  $(document).on('click', '#sadness'     , function(){sadness();     });
+//  $(document).on('click', '#disgust'     , function(){disgust();     });
   $(document).on('click', '#anger'       , function(){anger();       });
-  $(document).on('click', '#anticipation', function(){anticipation();});
-*/
+//  $(document).on('click', '#anticipation', function(){anticipation();});
+
 });
