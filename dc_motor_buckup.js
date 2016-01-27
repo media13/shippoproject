@@ -183,7 +183,7 @@
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out21, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 200);
+    }, 100);
   }
 
   // モータdown(short)
@@ -192,7 +192,7 @@
     var stop_motor = setInterval(function(){
       gpio.digitalWrite(motor_out22, ZGN.LOW);
       clearInterval(stop_motor);
-    }, 200);
+    }, 100);
   }
 
   // モータup(long)
@@ -266,7 +266,7 @@
         ulMotor();
         clearInterval(m2);
       },3000);
-      dsMotor();
+      dlMotor();
       cnt++;
       if(cnt>=5)clearInterval(m1);
     },3000);
